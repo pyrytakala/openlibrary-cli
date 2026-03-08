@@ -5,7 +5,7 @@ CLI for the [Open Library](https://openlibrary.org) API. Made with [api2cli.dev]
 ## Install
 
 ```bash
-npx api2cli install openlibrary-cli
+npx api2cli install pyrytakala/openlibrary-cli
 ```
 
 ## Usage
