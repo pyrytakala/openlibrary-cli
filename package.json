@@ -1,14 +1,26 @@
 {
   "name": "openlibrary-cli",
-  "version": "0.1.0",
-  "description": "CLI for the openlibrary API",
+  "version": "0.1.1",
+  "description": "CLI for the Open Library API — search books, authors, editions, subjects, and more",
   "type": "module",
   "bin": {
     "openlibrary-cli": "./dist/index.js"
   },
+  "files": [
+    "dist/index.js",
+    "README.md"
+  ],
   "scripts": {
     "build": "bun build src/index.ts --outfile dist/index.js --target bun",
     "dev": "bun run src/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pyrytakala/openlibrary-cli.git"
+  },
+  "license": "MIT",
+  "engines": {
+    "bun": ">=1.0"
   },
   "dependencies": {
     "commander": "^13.0.0",

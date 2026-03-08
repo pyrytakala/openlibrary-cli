@@ -1,11 +1,15 @@
 # openlibrary-cli
 
-CLI for the [Open Library](https://openlibrary.org) API. Made with [api2cli.dev](https://api2cli.dev).
+Unofficial CLI for the [Open Library](https://openlibrary.org) API. Made with [api2cli.dev](https://api2cli.dev).
+
+> **Note:** This is a community-maintained project and is not officially affiliated with or endorsed by Open Library.
 
 ## Install
 
 ```bash
-npx api2cli install pyrytakala/openlibrary-cli
+npm i -g openlibrary-cli
+# or
+npx openlibrary-cli --help
 ```
 
 ## Usage
@@ -13,7 +17,9 @@ npx api2cli install pyrytakala/openlibrary-cli
 No API key needed — the Open Library API is public.
 
 ```bash
-openlibrary-cli --help
+openlibrary-cli search books "dune" --limit 5
+openlibrary-cli books isbn 9780140328721
+openlibrary-cli authors get OL23919A
 ```
 
 ## Resources
@@ -31,31 +37,31 @@ openlibrary-cli --help
 
 | Command | Description |
 |---------|-------------|
-| `openlibrary-cli works get <olid>` | Get a work by OLID |
-| `openlibrary-cli works editions <olid>` | List editions of a work |
-| `openlibrary-cli works ratings <olid>` | Get ratings for a work |
-| `openlibrary-cli works bookshelves <olid>` | Get reading log counts |
+| `openlibrary-cli works get OL45804W` | Get a work by OLID |
+| `openlibrary-cli works editions OL45804W` | List editions of a work |
+| `openlibrary-cli works ratings OL45804W` | Get ratings for a work |
+| `openlibrary-cli works bookshelves OL45804W` | Get reading log counts |
 
 ### books
 
 | Command | Description |
 |---------|-------------|
-| `openlibrary-cli books get <olid>` | Get an edition by OLID |
-| `openlibrary-cli books isbn <isbn>` | Look up a book by ISBN |
+| `openlibrary-cli books get OL7353617M` | Get an edition by OLID |
+| `openlibrary-cli books isbn 9780140328721` | Look up a book by ISBN |
 
 ### authors
 
 | Command | Description |
 |---------|-------------|
-| `openlibrary-cli authors get <olid>` | Get author details |
-| `openlibrary-cli authors works <olid>` | List works by an author |
+| `openlibrary-cli authors get OL23919A` | Get author details |
+| `openlibrary-cli authors works OL23919A` | List works by an author |
 
 ### subjects
 
 | Command | Description |
 |---------|-------------|
-| `openlibrary-cli subjects get <subject>` | Get works for a subject |
-| `openlibrary-cli subjects get <subject> --ebooks` | Filter to e-books only |
+| `openlibrary-cli subjects get fantasy` | Get works for a subject |
+| `openlibrary-cli subjects get fantasy --ebooks` | Filter to e-books only |
 
 ### recent
 
@@ -66,4 +72,6 @@ openlibrary-cli --help
 
 ## Global Flags
 
-All commands support: `--json`, `--format <text|json|csv|yaml>`, `--verbose`, `--no-color`, `--no-header`
+All commands support: `--json`, `--format`, `--verbose`, `--no-color`, `--no-header`
+
+Format options: `text`, `json`, `csv`, `yaml`
